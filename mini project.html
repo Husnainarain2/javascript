@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    
+
+    
+</head>
+<style>
+    #bag_button{
+       color: black;
+       background-color: rgb(127, 243, 127);
+       padding: 5px 5px;
+       border: none;
+       border-radius: 5px;
+    }
+    #wish_list{
+        color: black;
+       background-color:rgb(207, 206, 206);
+       padding: 5px 5px;
+       border: 2px solid black;
+       border-radius: 5px;
+    }
+    .bag{
+     color: black;
+       background-color: rgb(127, 243, 127);
+       padding: 5px 5px;
+       border: none;
+       border-radius: 5px;
+    }
+
+</style>
+<body>
+    <button id="bag_button" onclick=" card=card+1;  document.querySelector('#items').innerText='you has   '    + card +   ' items';">add to bag</button>
+    <button id="wish_list"  onclick=" card=card-1;  document.querySelector('#items').innerText='you has   '    + card +   ' items' ";>move to wishlist</button>
+    <button class="bag"  onclick=" card=card+2;  document.querySelector('#items').innerText='you has   '    + card +   ' items';">get 1 free </button>
+
+     <h1 id="items">you has 0 items</h1>
+    <script>
+        let card= 0 ;
+        document.querySelector('#items').innerText='you has   '    + card +   ' items';
+    </script>
+</body>
+</html>
