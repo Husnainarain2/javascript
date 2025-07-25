@@ -52,6 +52,9 @@ let score ={
    win:0,
    lost:0,
    tie:0,
+   displayscore:function(){
+      return (`No of matches won:${score.win}, No of matches lost:${score.lost}, No of matches Tie:${score.tie}`);
+   }
 };
 
      let computerchoice1;
@@ -115,7 +118,7 @@ let score ={
       
      ${result}
      
-     won:${score.win},lost:${score.lost},Tie:${score.tie}`);
+     ${score.displayscore()}`);
     }
 </script>
 </body>
