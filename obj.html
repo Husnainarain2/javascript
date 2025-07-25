@@ -78,19 +78,19 @@
 
 
 
-
-let no1={
-  value1:222,
-  value2:333,  
-};
-
-let no2 = no1;
-console.log(no2);
-no1.value1 = 444;
-console.log(no2);
-no1.value1=6666;
-no2.value2=44998;
-console.log(no2);
+let person = {
+    name:'Husnain',
+    city:'Burewala',
+    age:18,
+ };
+ 
+ console.log(person.name);
+ console.log(person.city);
+ console.log(person['age']);
+person. name='abid';
+ console.log(person.name);
+ delete person.name;
+ console.log(person);
 
     </script>
 </body>
