@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //  primitive are copy directly; if value of variable are change the value of other  variable where value is assign did not change ; 
+        let a = 5;
+        let b= a;
+        console.log(a,b);
+         a = 10;
+        console.log(a,b);
+  // in object reference are copy, not the object copy directly ; 
+   
+ let value ={num1:22};
+ let value1=value;
+ console.log(value.num1,value1.num1);
+value.num1=111;
+console.log(value.num1,value1.num1);
+    </script>
+</body>
+</html>
