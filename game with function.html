@@ -45,19 +45,25 @@
 
     ">Stump</button>
 
+<button onclick="localStorage.clear();alert('score reset')">reset</button>
 
 
 <script>
-let score ={
-   win:0,
-   lost:0,
-   tie:0,
-   displayscore:function(){
+  let scorestr = localStorage.getItem('score');
+
+  let score = JSON.parse(scorestr) ||{
+   win: 0,
+   lost: 0,
+   tie: 0,
+
+  };
+    score.displayscore=function() {
       return (`No of matches won:${score.win}, No of matches lost:${score.lost}, No of matches Tie:${score.tie}`);
-   }
-};
+   }; 
+   
 
      let computerchoice1;
+    
     function generatecomputerchoice(){
          let randomnumber = Math.random() * 3
         if(randomnumber >0 && randomnumber <=1){
@@ -74,44 +80,46 @@ let score ={
     function getresult(usermove,computermove){
       if(usermove==='Bat'){
         if(computermove==='Ball'){
-          score.win=score.win+1;
+          score.win++;
           return'user won';
           } else if(computermove==='Bat'){
-            score.tie=score.tie+1;
+            score.tie++;
            return 'its a tie';
           } else if(computermove==='stump'){
-            score.lost=score.lost+1;
+            score.lost++;
           return'computer has won';
            }
             
          
       }else if(usermove==='Ball'){
              if(computermove==='Ball'){
-               score.tie=score.tie+1;
+               score.tie++;
            return'its a tie';
           }   else if(computermove==='Bat'){
-            score.lost=score.lost+1;
+            score.lost++;
           return 'computer has won';
           } else if(computermove==='stump'){
-            score.win=score.win+1;
+            score.win++;
           return 'user won';
         }
           
       } else{
           if(computermove==='Ball'){
-            score.lost=score.lost+1;
+            score.lost++;
         return 'computer has won';
      } else if(computermove==='Bat'){
-      score.win=score.win+1;
+      score.win++;
         return 'user won';
      } else if(computermove==='stump'){
-      score.tie=score.tie+1;
+      score.tie++;
         return 'its a tie';
      }
       }
     }
 
-    function showresult(usermove,computermove,result){
+    function showresult(usermove,computermove,result)
+    { 
+      localStorage.setItem('score',JSON.stringify(score));
       //console.log(score);
      alert(`You have chosen ${usermove}. Computer choice is ${computermove} 
      

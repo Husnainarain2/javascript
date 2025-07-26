@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+</head>
+<body>
+    <script>
+
+        //for local storage simple concept to setitem in local storage;
+
+        // localStorage.setItem('name','HUsnain');
+        // localStorage.setItem('name1','abid');
+        // localStorage.setItem('number','2222');
+        localStorage.setItem('name3','HUsnain');
+
+        console.log(localStorage.getItem('name')); //after comment bi hum in ki value fetch kar sakta ha 
+        // console.log(localStorage.length);
+
+
+         //ikr hum local storage ma save krna ka bad kisi bi key ki value ko get karna chia tu vo huma mil sakti ha through local storage;
+
+         let product={
+            name:'shirt',
+            price:3000,
+            rating : {
+                star:3.4,
+                noofreviews:444,
+
+               }
+        };
+        //  console.log(product);
+         console.log(localStorage.setItem('product',JSON.stringify(product)));
+         console.log(localStorage.getItem('product'));
+
+//for remove and clear all item in local storaGE 
+
+localStorage.removeItem('name')
+localStorage.clear();
+        
+
+    </script>
+</body>
+</html>
